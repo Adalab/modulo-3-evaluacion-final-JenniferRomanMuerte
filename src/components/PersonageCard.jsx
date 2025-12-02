@@ -4,7 +4,7 @@ const PersonageCard = ({ image, name, specie }) => {
       <div className="personagesList__personageCard--containerImg">
         <img
           className="personagesList__personageCard--containerImg--img"
-          src={image}
+          src={image ? image : 'https://placehold.co/210x295/C9A92A/666666/?format=svg&text=Harry+Potter'}
           alt={name}
         />
       </div>
