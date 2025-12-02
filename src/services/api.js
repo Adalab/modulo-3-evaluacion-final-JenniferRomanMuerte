@@ -1,6 +1,6 @@
 const callToApi = () => {
   // Llamamos a la API
-  return fetch("https://hp-api.onrender.com/api/characters/house/gryffindor") // Url para hacer la peticion
+  return fetch("https://hp-api.onrender.com/api/characters/") // Url para hacer la peticion
     .then((response) => response.json())
     .then((response) => {
       // Asignamos response a la variable que queramos

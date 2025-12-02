@@ -1,11 +1,14 @@
 import PersonageCard from "./PersonageCard";
 
-const PersonagesList = ({ personages, filterName }) => {
+const PersonagesList = ({ personages, filterName, filterHouse }) => {
   return (
     <ul className="personagesList">
       {personages
         .filter((personage) =>
           personage.name.toLowerCase().includes(filterName)
+        )
+        .filter((personage) =>
+          personage.house === filterHouse
         )
         .map((personage) => (
           <PersonageCard

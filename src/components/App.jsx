@@ -11,6 +11,7 @@ import Filters from "./Filters/Filters";
 function App() {
   const [personages, setPersonages] = useState([]);
   const [filterName, setFilterName] = useState("");
+  const [filterHouse, setFilterHouse] = useState("gryffindor");
 
   useEffect(() => {
     // Dentro de useEffect llamamos a la API
@@ -22,13 +23,22 @@ function App() {
   const updateFilterName = (value) =>{
     setFilterName(value);
   }
+  const updateFilterHouse = (value) =>{
+    setFilterHouse(value);
+  }
 
   return (
     <>
       <Header />
       <main>
-        <Filters updateFilterName={updateFilterName} filterName={filterName}/>
-        <PersonagesList personages={personages} filterName = {filterName}/>
+        <Filters
+        updateFilterName={updateFilterName}
+        filterName={filterName}
+        personages = {personages}
+        filterHouse = {filterHouse}
+        updateFilterHouse = {updateFilterHouse}
+        />
+        <PersonagesList personages={personages} filterName = {filterName}  filterHouse = {filterHouse}/>
       </main>
     </>
   );
