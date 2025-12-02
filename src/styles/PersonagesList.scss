@@ -1,0 +1,47 @@
+@use "./core/variables" as var;
+
+.personagesList {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 3rem;
+  justify-content: center;
+
+  &__personageCard {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    list-style: none;
+    background-color: #d4d4d4;
+    width: 15rem;
+    border-radius: 5px;
+
+    box-shadow: 0px 0px 10px var.$color-primary;
+    display: block;
+    &--containerImg {
+      width: 100%;
+      height: 75%;
+      &--img {
+        border-radius: 5px;
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+      }
+    }
+    &--name {
+      padding-top: 1.5rem;
+      font-size: 1.5rem;
+      padding-inline:1rem;
+    }
+    &--specie {
+      font-size: 1.3rem;
+      padding-inline:1rem;
+      padding-bottom: 0.5rem;
+    }
+    & a {
+
+      text-decoration: none;
+      font-family: var.$font-family-text;
+      color: var.$color-accent;
+    }
+  }
+}

@@ -1,5 +1,5 @@
 import PersonageCard from "./PersonageCard";
-
+import "../styles/PersonagesList.scss";
 const PersonagesList = ({ personages, filterName, filterHouse }) => {
   const filtered = personages
     .filter((personage) => personage.name.toLowerCase().includes(filterName))

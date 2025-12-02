@@ -1,4 +1,5 @@
 import { Link } from "react-router-dom";
+import "../styles/PersonagesList.scss";
 
 const PersonageCard = ({ id, image, name, specie }) => {
   return (
@@ -10,13 +11,13 @@ const PersonageCard = ({ id, image, name, specie }) => {
             src={
               image
                 ? image
-                : "https://placehold.co/210x295/C9A92A/666666/?format=svg&text=Harry+Potter"
+                : "https://placehold.co/210x295/887c0e/666666/?format=svg&text=Harry+Potter"
             }
             alt={name}
           />
         </div>
-        <span className="personagesList__personageCard--name">{name}</span>
-        <span className="personagesList__personageCard--specie">{specie}</span>
+        <p className="personagesList__personageCard--name">{name}</p>
+        <p className="personagesList__personageCard--specie">{specie}</p>
       </Link>
     </li>
   );
