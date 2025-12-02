@@ -12,6 +12,7 @@ const callToApi = () => {
           gender: eachPersonage.gender,
           house: eachPersonage.house,
           images: eachPersonage.image,
+          alive: eachPersonage.alive
 
         };
       });

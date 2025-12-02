@@ -13,6 +13,7 @@ const PersonagesList = ({ personages, filterName, filterHouse }) => {
         .map((personage) => (
           <PersonageCard
             key={personage.id}
+            id = {personage.id}
             image={personage.images}
             name={personage.name}
             specie={personage.species}
