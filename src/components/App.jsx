@@ -5,6 +5,7 @@ import { useEffect, useState } from 'react';
 import { Route, Routes } from "react-router-dom";
 import callToApi from '../services/api';
 import Header from './Header';
+import PersonagesList from './PersonagesList';
 
 
 function App() {
@@ -22,6 +23,9 @@ function App() {
   return (
     <>
      <Header/>
+     <main>
+      <PersonagesList personages = {personages}/>
+     </main>
     </>
   );
 }
