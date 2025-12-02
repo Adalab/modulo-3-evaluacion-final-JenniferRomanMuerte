@@ -1,10 +1,12 @@
+import "../../styles/Filters.scss";
+
 const FilterName = ({ filterName, updateFilterName }) => {
   const handleFilterName = (ev) => {
     updateFilterName(ev.target.value.toLowerCase());
   };
 
   return (
-    <input
+    <input className="filters__input"
       type="text"
       id="name"
       name="name"

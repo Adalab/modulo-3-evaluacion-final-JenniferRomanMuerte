@@ -1,0 +1,20 @@
+@use "../styles/core/variables" as var;
+.filters{
+  display:flex;
+  flex-direction: column;
+  gap: 1rem;
+  @media(min-width: 478px){
+  flex-direction: row;
+  justify-content: center;
+  gap: 3rem;
+  }
+  &__input{
+  max-width: 75%;
+  border: 1.5px solid var.$color-primary;
+  border-radius: 2px;
+  padding:0.5rem;
+  background-color: #edf0e2;
+  color: var.$color-text;
+  }
+
+}

@@ -1,5 +1,6 @@
 import FilterHouse from "./FilterHouse";
 import FilterName from "./FilterName";
+import "../../styles/Filters.scss";
 
 const Filters = ({
   filterName,
@@ -12,7 +13,7 @@ const Filters = ({
     ev.preventDefault();
   };
   return (
-    <form className="Filters" onSubmit={handleSubmit}>
+    <form className="filters" onSubmit={handleSubmit}>
       <FilterName updateFilterName={updateFilterName} filterName={filterName} />
       <FilterHouse
         updateFilterHouse={updateFilterHouse}

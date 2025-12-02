@@ -35,7 +35,7 @@ function App() {
         <Route
           path="/"
           element={
-            <main>
+            <main className="main">
               <Filters
                 updateFilterName={updateFilterName}
                 filterName={filterName}
