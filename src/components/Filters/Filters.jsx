@@ -8,8 +8,11 @@ const Filters = ({
   filterHouse,
   updateFilterHouse,
 }) => {
+  const handleSubmit = (ev) => {
+    ev.preventDefault();
+  };
   return (
-    <form className="Filters">
+    <form className="Filters" onSubmit={handleSubmit}>
       <FilterName updateFilterName={updateFilterName} filterName={filterName} />
       <FilterHouse
         updateFilterHouse={updateFilterHouse}
