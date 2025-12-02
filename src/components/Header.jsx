@@ -1,7 +1,8 @@
+import "../styles/Header.scss"
 const Header = () =>{
 return(
-  <header>
-    <h1>Harry potter</h1>
+  <header className="header">
+    <h1 className="header__title">HarryPotter</h1>
   </header>
 );
 }
