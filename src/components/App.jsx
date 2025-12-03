@@ -34,6 +34,11 @@ function App() {
     setFilterHouse(value);
   };
 
+  const resetPage = () => {
+    setFilterName("");
+    setFilterHouse("");
+  }
+
   return (
     <>
       <Header />
@@ -52,6 +57,7 @@ function App() {
                     personages={personages}
                     filterHouse={filterHouse}
                     updateFilterHouse={updateFilterHouse}
+                    resetPage = {resetPage}
                   />
                   <PersonagesList
                     personages={personages}

@@ -5,11 +5,13 @@
   gap: 1rem;
   align-items: center;
 
+
   @media(min-width: 478px){
   flex-direction: row;
   justify-content: center;
   gap: 3rem;
   }
+
   &__input{
   width: 90%;
   border: 1.5px solid var.$color-primary;
@@ -21,6 +23,22 @@
   max-width: 45%;
   min-width: 35%;
   }
+  }
+
+  &__btnReset{
+    background-color: var.$color-primary;
+    border: 1px solid var.$color-accent;
+    padding: 0.5rem 1.5rem;
+    border-radius: 2px;
+    color: var.$color-accent;
+    font-family: var.$font-family-text;
+    box-shadow: 0 2px 10px var.$color-secondary;
+    &:hover{
+      transform: scale(1.2);
+      color: var.$color-primary;
+      background-color: var.$color-accent;
+       border: 1px solid var.$color-primary;
+    }
   }
 
 }

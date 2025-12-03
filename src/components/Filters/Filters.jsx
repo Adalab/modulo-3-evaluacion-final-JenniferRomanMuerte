@@ -8,10 +8,16 @@ const Filters = ({
   personages,
   filterHouse,
   updateFilterHouse,
+  resetPage
 }) => {
   const handleSubmit = (ev) => {
     ev.preventDefault();
   };
+
+  const handleReset = (ev) =>{
+    ev.preventDefault();
+    resetPage();
+  }
   return (
     <form className="filters" onSubmit={handleSubmit}>
       <FilterName updateFilterName={updateFilterName} filterName={filterName} />
@@ -20,6 +26,7 @@ const Filters = ({
         filterHouse={filterHouse}
         personages={personages}
       />
+      <button className="filters__btnReset" onClick= {handleReset}>Reset</button>
     </form>
   );
 };
