@@ -15,6 +15,7 @@ function App() {
   const [filterName, setFilterName] = useState("");
   const [filterHouse, setFilterHouse] = useState("Gryffindor");
   const [isLoading, setIsLoading] = useState(true);
+  const [filterGender, setFilterGender] = useState("");
 
   useEffect(() => {
     // Dentro de useEffect llamamos a la API
@@ -33,11 +34,15 @@ function App() {
   const updateFilterHouse = (value) => {
     setFilterHouse(value);
   };
+  const updateFilterGender = (value) => {
+    setFilterGender(value);
+  };
 
   const resetPage = () => {
     setFilterName("");
     setFilterHouse("");
-  }
+    setFilterGender("");
+  };
 
   return (
     <>
@@ -48,7 +53,7 @@ function App() {
           element={
             <main className="main">
               {isLoading ? (
-                <Spinner/>
+                <Spinner />
               ) : (
                 <>
                   <Filters
@@ -57,12 +62,15 @@ function App() {
                     personages={personages}
                     filterHouse={filterHouse}
                     updateFilterHouse={updateFilterHouse}
-                    resetPage = {resetPage}
+                    resetPage={resetPage}
+                    filterGender={filterGender}
+                    updateFilterGender={updateFilterGender}
                   />
                   <PersonagesList
                     personages={personages}
                     filterName={filterName}
                     filterHouse={filterHouse}
+                    filterGender={filterGender}
                   />
                 </>
               )}

@@ -6,7 +6,8 @@ const FilterName = ({ filterName, updateFilterName }) => {
   };
 
   return (
-    <input className="filters__input"
+    <input
+      className="filters__input"
       type="text"
       id="name"
       name="name"

@@ -7,7 +7,7 @@ import hufflepuffImg from "../images/Hufflepuff.png";
 import ravenclawImg from "../images/Ravenclaw.png";
 import Spinner from "./utils/Spinner";
 
-const PersonageDetails = ({ personages, isLoading}) => {
+const PersonageDetails = ({ personages, isLoading }) => {
   const { id } = useParams();
 
   const personageDetails = personages.find((personage) => personage.id === id);
@@ -15,7 +15,7 @@ const PersonageDetails = ({ personages, isLoading}) => {
   if (isLoading) {
     return (
       <main className="mainDetails">
-        <Spinner/>
+        <Spinner />
       </main>
     );
   }
@@ -60,15 +60,19 @@ const PersonageDetails = ({ personages, isLoading}) => {
               alt={personageDetails.name}
             />
           </div>
+
           <div className="mainDetails__card--info">
             <div className="mainDetails__card--info--name">
-              <div className="mainDetails__card--info--name--containerImg">
-                <img
-                  className="mainDetails__card--info--name--containerImg--img"
-                  src={imgHouse}
-                  alt={personageDetails.house}
-                />
-              </div>
+              {imgHouse && (
+                <div className="mainDetails__card--info--name--containerImg">
+                  <img
+                    className="mainDetails__card--info--name--containerImg--img"
+                    src={imgHouse}
+                    alt={personageDetails.house}
+                  />
+                </div>
+              )}
+
               <span className="mainDetails__card--info--name--span">
                 {personageDetails.name}
               </span>
@@ -87,7 +91,9 @@ const PersonageDetails = ({ personages, isLoading}) => {
             </span>
             <span>Specie: {personageDetails.species}</span>
             <span>Gender: {personageDetails.gender}</span>
-            <span>House: {personageDetails.house}</span>
+            {personageDetails.house && (
+              <span>House: {personageDetails.house}</span>
+            )}
           </div>
         </section>
       </main>

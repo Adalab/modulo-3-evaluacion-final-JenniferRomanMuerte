@@ -1,9 +1,17 @@
 import PersonageCard from "./PersonageCard";
 import "../styles/PersonagesList.scss";
-const PersonagesList = ({ personages, filterName, filterHouse }) => {
+const PersonagesList = ({
+  personages,
+  filterName,
+  filterHouse,
+  filterGender,
+}) => {
   const filtered = personages
     .filter((personage) => personage.name.toLowerCase().includes(filterName))
-    .filter((personage) => personage.house === filterHouse);
+    .filter((personage) => personage.house === filterHouse)
+    .filter((personage) =>
+      !filterGender ? true : personage.gender === filterGender
+    );
 
   return (
     <ul className="personagesList">
