@@ -1,0 +1,23 @@
+@use "./core/variables" as var;
+
+.spinner {
+  color: var.$color-primary;
+  font-family: var.$font-family-text;
+  font-size: 6rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  min-height: 40vh;
+  @media (min-width: 478px) {
+    font-size: 10rem;
+    &__text {
+      font-size: 5rem;
+    }
+  }
+  gap: 2rem;
+  &__text {
+    font-size: 3rem;
+  }
+}

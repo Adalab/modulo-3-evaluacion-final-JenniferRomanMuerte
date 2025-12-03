@@ -5,11 +5,20 @@ import gryffindorImg from "../images/Gryffindor.png";
 import slytherinImg from "../images/Slytherin.png";
 import hufflepuffImg from "../images/Hufflepuff.png";
 import ravenclawImg from "../images/Ravenclaw.png";
+import Spinner from "./utils/Spinner";
 
-const PersonageDetails = ({ personages }) => {
+const PersonageDetails = ({ personages, isLoading}) => {
   const { id } = useParams();
 
   const personageDetails = personages.find((personage) => personage.id === id);
+
+  if (isLoading) {
+    return (
+      <main className="mainDetails">
+        <Spinner/>
+      </main>
+    );
+  }
 
   if (!personageDetails) {
     return (
@@ -68,11 +77,11 @@ const PersonageDetails = ({ personages }) => {
               Status:{" "}
               {personageDetails.alive ? (
                 <>
-                  Vivo <i class="fa-solid fa-shield-heart"></i>
+                  Vivo <i className="fa-solid fa-shield-heart"></i>
                 </>
               ) : (
                 <>
-                  Muerto <i class="fa-solid fa-skull-crossbones"></i>
+                  Muerto <i className="fa-solid fa-skull-crossbones"></i>
                 </>
               )}
             </span>

@@ -8,16 +8,21 @@ import Header from "./Header";
 import PersonagesList from "./PersonagesList";
 import Filters from "./Filters/Filters";
 import PersonageDetails from "./PersonageDetails";
+import Spinner from "./utils/Spinner";
 
 function App() {
   const [personages, setPersonages] = useState([]);
   const [filterName, setFilterName] = useState("");
   const [filterHouse, setFilterHouse] = useState("Gryffindor");
+  const [isLoading, setIsLoading] = useState(true);
 
   useEffect(() => {
     // Dentro de useEffect llamamos a la API
     callToApi().then((response) => {
       setPersonages(response);
+      setTimeout(() => {
+        setIsLoading(false);
+      }, 1000);
     });
   }, []);
 
@@ -36,22 +41,33 @@ function App() {
           path="/"
           element={
             <main className="main">
-              <Filters
-                updateFilterName={updateFilterName}
-                filterName={filterName}
-                personages={personages}
-                filterHouse={filterHouse}
-                updateFilterHouse={updateFilterHouse}
-              />
-              <PersonagesList
-                personages={personages}
-                filterName={filterName}
-                filterHouse={filterHouse}
-              />
+              {isLoading ? (
+                <Spinner/>
+              ) : (
+                <>
+                  <Filters
+                    updateFilterName={updateFilterName}
+                    filterName={filterName}
+                    personages={personages}
+                    filterHouse={filterHouse}
+                    updateFilterHouse={updateFilterHouse}
+                  />
+                  <PersonagesList
+                    personages={personages}
+                    filterName={filterName}
+                    filterHouse={filterHouse}
+                  />
+                </>
+              )}
             </main>
           }
         ></Route>
-        <Route path="/detail/:id" element={<PersonageDetails personages={personages} />} />
+        <Route
+          path="/detail/:id"
+          element={
+            <PersonageDetails personages={personages} isLoading={isLoading} />
+          }
+        />
       </Routes>
     </>
   );
