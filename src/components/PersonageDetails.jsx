@@ -9,7 +9,7 @@ const PersonageDetails = ({personages}) => {
  console.log(personageDetails);
   return (
     <main className="mainDetails">
-    <Link className="mainDetails__link">Volver</Link>
+    <Link className="mainDetails__link"  to= "/">Volver</Link>
       <section className="mainDetails__card">
         <div  className="mainDetails__card--containerImg">
           <img  className="mainDetails__card--containerImg--img"
