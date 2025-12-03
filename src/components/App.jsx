@@ -19,6 +19,7 @@ function App() {
   useEffect(() => {
     // Dentro de useEffect llamamos a la API
     callToApi().then((response) => {
+      response.sort((a, b) => a.name.localeCompare(b.name));
       setPersonages(response);
       setTimeout(() => {
         setIsLoading(false);
