@@ -4,7 +4,7 @@ import "../styles/PersonagesList.scss";
 const PersonageCard = ({ id, image, name, specie }) => {
   return (
     <li className="personagesList__personageCard">
-      <Link to={`/personage/${id}`}>
+      <Link to={`/detail/${id}`}>
         <div className="personagesList__personageCard--containerImg">
           <img
             className="personagesList__personageCard--containerImg--img"

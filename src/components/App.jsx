@@ -51,7 +51,7 @@ function App() {
             </main>
           }
         ></Route>
-        <Route path="/personage/:id" element={<PersonageDetails personages={personages} />} />
+        <Route path="/detail/:id" element={<PersonageDetails personages={personages} />} />
       </Routes>
     </>
   );
