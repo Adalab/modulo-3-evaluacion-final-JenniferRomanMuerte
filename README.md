@@ -1,18 +1,38 @@
-# React + Vite
+# Harry Potter Characters · React + Vite
+[GitHub Pages](https://adalab.github.io/modulo-3-evaluacion-final-JenniferRomanMuerte/)
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+![Landing](src/images/Landing.png)
+![Details](src/images/Details.png)
 
-Currently, two official plugins are available:
+SPA que lista personajes de Harry Potter, permite filtrarlos y ver el detalle de cada uno con su escudo de casa.
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) (or [oxc](https://oxc.rs) when used in [rolldown-vite](https://vite.dev/guide/rolldown)) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+## Demo local
+- `npm install`
+- `npm run dev`
+- Abre el enlace que muestra Vite (por defecto http://localhost:5173).
 
-## React Compiler
 
-The React Compiler is enabled on this template. See [this documentation](https://react.dev/learn/react-compiler) for more information.
+## Tecnologías
+React 19, Vite, React Router, Sass, Font Awesome.
 
-Note: This will impact Vite dev & build performances.
+## API
+Se consumen los personajes desde `https://hp-api.onrender.com/api/characters/` (`src/services/api.js`) y se normalizan campos básicos (id, name, species, gender, house, image, alive).
 
-## Expanding the ESLint configuration
+## Funcionalidades
+- Listado de personajes con tarjeta.
+- Filtros por nombre, casa y género.
+- Detalle con imagen del personaje y escudo de la casa.
+- Fallback de imagen cuando falta foto.
+- Spinner de carga mientras llega la API.
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+## Tarjeta de detalle
+- Muestra la foto del personaje (o placeholder si falta).
+- Nombre acompañado del escudo de su casa.
+- Estado con icono (vivo/🛡️ o muerto/☠️), especie, género y casa.
+- Layout responsive: foto a la izquierda y datos a la derecha; en pantallas muy estrechas se apila.
+
+## Estructura rápida
+- `src/components` – componentes (tarjetas, filtros, detalle, spinner).
+- `src/styles` – estilos Sass.
+- `src/services/api.js` – llamada a la API y normalización.
+- `src/images` – assets (escudos y capturas).
