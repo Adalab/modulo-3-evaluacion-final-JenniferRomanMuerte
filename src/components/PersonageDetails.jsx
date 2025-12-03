@@ -51,7 +51,7 @@ const PersonageDetails = ({ personages }) => {
               {personageDetails.name}
             </span>
           </div>
-          <span>Status: {personageDetails.alive ? "Vivo" : "Muerto"}</span>
+          <span>Status: {personageDetails.alive ? <>Vivo <i class="fa-solid fa-shield-heart"></i></>: <>Muerto <i class="fa-solid fa-skull-crossbones"></i></>}</span>
           <span>Specie: {personageDetails.species}</span>
           <span>Gender: {personageDetails.gender}</span>
           <span>House: {personageDetails.house}</span>
