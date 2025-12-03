@@ -1,20 +1,27 @@
 @use "./core/variables" as var;
 
-.header{
+.header {
   text-align: center;
   padding: 2rem;
   background-color: var.$color-bg;
   box-shadow: inset 0 -10px 12px -6px var.$color-secondary;
-  &__title{
-  font-family: "Blaka Ink", system-ui;
-  font-size: 5rem;
-  background: linear-gradient(90deg,  var.$color-primary, var.$color-secondary, var.$color-primary,var.$color-secondary,var.$color-primary);
-  -webkit-background-clip: text;
-  background-clip: text;
-  color: transparent;
+  &__title {
+    font-family: "Blaka Ink", system-ui;
+    font-size: 3rem;
+    background: linear-gradient(
+      90deg,
+      var.$color-primary,
+      var.$color-secondary,
+      var.$color-primary,
+      var.$color-secondary,
+      var.$color-primary
+    );
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
 
-   @media(min-width: 478px){
-    font-size: 8rem;
+    @media (min-width: 478px) {
+      font-size: 6rem;
+    }
   }
 }
-  }

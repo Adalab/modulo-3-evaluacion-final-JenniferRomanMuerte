@@ -1,5 +1,6 @@
 import {useParams } from "react-router-dom";
 import "../styles/PersonageDetails.scss";
+import { Link } from "react-router-dom";
 
 const PersonageDetails = ({personages}) => {
  const { id } = useParams();
@@ -8,10 +9,11 @@ const PersonageDetails = ({personages}) => {
  console.log(personageDetails);
   return (
     <main className="mainDetails">
+    <Link className="mainDetails__link">Volver</Link>
       <section className="mainDetails__card">
         <div  className="mainDetails__card--containerImg">
           <img  className="mainDetails__card--containerImg--img"
-          src= {personageDetails.images}
+          src= {personageDetails.images ? personageDetails.images :  "https://placehold.co/210x295/887c0e/666666/?format=svg&text=Harry+Potter"}
           alt={personageDetails.name}
           />
         </div>

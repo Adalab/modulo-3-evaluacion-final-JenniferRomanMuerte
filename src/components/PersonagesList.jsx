@@ -8,7 +8,7 @@ const PersonagesList = ({ personages, filterName, filterHouse }) => {
   return (
     <ul className="personagesList">
       {filtered.length === 0 ? (
-        <li>
+        <li className="personagesList__notPersonage">
           No hay ningún personaje que coincida con la palabra {filterName}
         </li>
       ) : (
